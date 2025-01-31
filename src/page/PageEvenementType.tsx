@@ -1,7 +1,8 @@
 import React from "react"
 import { Evenement } from "../ClassEvement"
-import managerEvent from "../GetData"
+import managerEvent, { DateFilterType } from "../GetData"
 import ContainerEvenement from "../component/ContainerEvenement"
+import NavBarre from "../component/NavBarre"
 
 interface Props{
     getEvenement:string
@@ -24,10 +25,13 @@ const PageEvenementType:React.FC<Props> =({ getEvenement }) => {
     }
 
     return(
-        <div>
-            <a href="/">Retour</a>
-            {htmlEvenet}
-        </div>
+        <>
+            <NavBarre strTitre={`Les évènements ${getEvenement == DateFilterType.PAST ? "passés" : "futures"}`}/>
+            <div className="content">
+                <h1>Voici nos {getEvenement == DateFilterType.PAST ? "évènements passés" : "prochains évènements"}</h1>
+                {htmlEvenet}
+            </div>
+        </>
     )
 
 }

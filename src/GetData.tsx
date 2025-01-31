@@ -7,6 +7,8 @@ export enum DateFilterType {
 
 export class ManagerEvent {
     listEvent: Evenement[] = [];
+    listEventPass: Evenement[] = [];
+    listEventFuture: Evenement[] = [];
 
 
     /**
@@ -14,19 +16,11 @@ export class ManagerEvent {
      * @param filterType élément de comparaison, past pour récupérer les évenements passé, future pour les avenirs
      * @returns 
      */
-    getEvenementPasse( filterType:string ) : Evenement[]{
-
-        const now = new Date(); // Date actuelle
-
-        if (filterType !== DateFilterType.PAST && filterType !== DateFilterType.FUTURE) {
-            filterType = DateFilterType.PAST;
+    getEvenementPasse(filterType:string ) : Evenement[]{
+        if (filterType == DateFilterType.PAST){
+            return this.listEventPass
         }
-
-        return this.listEvent.filter(dateStr => {
-            return this.listEvent.filter(evenement => {
-                return filterType === DateFilterType.PAST ? evenement.date < now : evenement.date > now;
-            });
-        });
+        return this.listEventFuture
     
     }
 
@@ -35,9 +29,6 @@ export class ManagerEvent {
 
         let trapError = "";
         try {
-            console.log("shearch");
-            const id = 'AKfycbxlfIKECBPHFIrt9cNKuwMaJAggjPG9i0Uvjh4IqU-iFMmEDNZnoCG_zONfWDPFa6sU';
-            const action = '?path=Sheet1&action=read';
             const url = `https://script.google.com/macros/s/AKfycbxlfIKECBPHFIrt9cNKuwMaJAggjPG9i0Uvjh4IqU-iFMmEDNZnoCG_zONfWDPFa6sU/exec?path=Sheet1&action=read`;
             const response = await fetch(url);
                 //console.log("shearch: ", token)
@@ -53,22 +44,29 @@ export class ManagerEvent {
                 const datatmp = await response.json();
                 const data = datatmp.data;
                 //const error = data.debugInfo
-                console.log(data);
+                //console.log(data);
+                const dateActuel = new Date;
 
                 for (let i = 0; i < data.length; i++) {
                     
                     const tmpTitre = data[i].titre;
                     const tmpImage = data[i].image;
                     const tmpContenu = data[i].contenu;
-                    const tmpDate = data[i].date;
+                    const tmpDate = new Date(data[i].date);
                     const tmpDuree = data[i].duree;
                     const tmpPrix = data[i].prix;
                     const tmpLocalisation = data[i].tmpLocalisation;
                     
-                    console.log(tmpTitre, tmpImage, tmpContenu, tmpDate, tmpDuree, tmpPrix, tmpLocalisation);
+                    
+                    const event = new Evenement(tmpTitre, tmpImage, tmpContenu, tmpDate, tmpDuree, tmpPrix, tmpLocalisation)
+                    this.listEvent.push(event)
 
-                    this.listEvent.push(new Evenement(tmpTitre, tmpImage, tmpContenu, tmpDate, tmpDuree, tmpPrix, tmpLocalisation))
-                    //console.log(this.listEvent[this.listEvent.length-1].toString());
+                    if (event.date < dateActuel){
+                        this.listEventPass.push(event)
+                    }else{
+                        this.listEventFuture.push(event)
+                    }
+                    
                 }
 
 

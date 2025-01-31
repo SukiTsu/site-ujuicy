@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 
-import './App.css'
 import { DateFilterType } from './GetData'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import managerEvent from './GetData'
 import PageEvenementType from './page/PageEvenementType'
 import Home from './page/Home'
 import NotFound from './page/NotFound'
+import "./assets/style/styleIndex.css"
 
 
 function App() {
@@ -18,7 +18,6 @@ function App() {
       if (!hasFetchedData.current) {
         hasFetchedData.current = true
         const routes: JSX.Element[] = [];
-        console.log("get data");
         await managerEvent.fetchData();
 
         Object.values(DateFilterType).forEach((type => {
