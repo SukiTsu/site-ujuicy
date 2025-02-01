@@ -52,7 +52,13 @@ export class ManagerEvent {
                     const tmpTitre = data[i].titre;
                     const tmpImage = data[i].image;
                     const tmpContenu = data[i].contenu;
+
+                    const tmpHeure = data[i].heure;
+                    const [hours, minutes] = tmpHeure.split("h").map(Number);
                     const tmpDate = new Date(data[i].date);
+                    tmpDate.setHours(hours)
+                    tmpDate.setMinutes(minutes)
+
                     const tmpDuree = data[i].duree;
                     const tmpPrix = data[i].prix;
                     const tmpLocalisation = data[i].tmpLocalisation;

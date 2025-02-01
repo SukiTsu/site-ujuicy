@@ -18,7 +18,7 @@ const ContainerEvenement:React.FC<Props> =({evenement}) => {
               
             
               <h3>{evenement.titre}</h3>
-              <p>Date : {evenement.date.toString()}</p>
+              <p>Date : {evenement.dateToString()}</p>
             </div>
 
   

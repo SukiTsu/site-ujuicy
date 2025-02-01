@@ -2,6 +2,7 @@
 import NavBarre from "../component/NavBarre"
 import { DateFilterType } from "../GetData"
 import "../assets/style/styleIndex.css"
+import ContainerButtonImage from "../component/ContainerButonImage"
 
 const Home =({}) => {
 
@@ -15,8 +16,8 @@ const Home =({}) => {
                     Nos événements, tels que les tentes rouges, célèbrent la force et la sagesse féminine dans un cadre bienveillant et chaleureux. 
                     Laissez-vous guider sur ce chemin d’épanouissement personnel et collectif, et vivez une expérience profondément nourrissante.</p>
                     
-                <a href={`/evenement/${DateFilterType.PAST}`}>Voir les évènement passé</a>
-                <a href={`/evenement/${DateFilterType.FUTURE}`}>Voir les évènement future</a>
+                <ContainerButtonImage src="Voir les évènement passé" img="./event_passe.webp" lien={`/evenement/${DateFilterType.PAST}`} />
+                <ContainerButtonImage src="Voir les évènement future" img="./event_futur.webp" lien={`/evenement/${DateFilterType.FUTURE}` }/>
             </div>
         </>
     )

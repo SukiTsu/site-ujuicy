@@ -1,0 +1,34 @@
+
+  /* Conteneur principal */
+  .container-button {
+    padding: 20px;
+    width: 50%;
+    justify-self: center;
+  }
+  
+
+  /* Style des cartes d'événement */
+  .card-button {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .card-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-button img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .card-button h3 {
+    margin: 10px 0;
+  }
+  
