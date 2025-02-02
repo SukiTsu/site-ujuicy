@@ -1,3 +1,4 @@
+/* 🌟 HEADER */
 .header {
     height: 100vh;
     display: flex;
@@ -11,50 +12,82 @@
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-}
-
-.header h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
-}
-
-.header p {
-    font-size: 1.5em;
-}
-
-/* Navbar */
-.navbar {
+  }
+  
+  /* 🛠️ NAVBAR */
+  .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px 0;
-    z-index: 1000;
-}
-
-.navbar ul {
+    z-index: 2;
+  }
+  
+  .nav-links {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 20px;
     margin: 0;
     padding: 0;
-}
-
-.navbar li {
+  }
+  
+  .nav-links li {
     display: inline;
-}
-
-.navbar a {
+  }
+  
+  .nav-links a {
     color: white;
     text-decoration: none;
     font-size: 1.1em;
     padding: 5px 10px;
     transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.navbar a:hover {
+  }
+  
+  .nav-links a:hover {
     background-color: #555;
     color: #fff;
     border-radius: 5px;
-}
+  }
+  
+  /* 📱 MENU BURGER POUR MOBILE */
+  .burger-menu {
+    display: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+  
+  /* 🟢 RESPONSIVE POUR MOBILE */
+  @media (max-width: 768px) {
+    .burger-menu {
+      display: block;
+      z-index: 3;
+    }
+  
+    .nav-links {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.9);
+      text-align: center;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .nav-links.open {
+      transform: translateY(0);
+    }
+  
+    .nav-links li {
+      display: block;
+      padding: 15px;
+    }
+  }
+  

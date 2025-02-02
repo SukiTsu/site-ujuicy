@@ -7,6 +7,8 @@ import PageEvenementType from './page/PageEvenementType'
 import Home from './page/Home'
 import NotFound from './page/NotFound'
 import "./assets/style/styleIndex.css"
+import About from './page/About'
+import Contact from './page/Contact'
 
 
 function App() {
@@ -36,6 +38,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/a-propos" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         {newRoute}
         <Route path="*" element={<NotFound />} />
       </Routes>

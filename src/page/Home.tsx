@@ -3,6 +3,8 @@ import NavBarre from "../component/NavBarre"
 import { DateFilterType } from "../GetData"
 import "../assets/style/styleIndex.css"
 import ContainerButtonImage from "../component/ContainerButonImage"
+import ContainerImageAnimation from "../component/ContainerImageAnime"
+import Footer from "../component/Footer"
 
 const Home =({}) => {
 
@@ -16,9 +18,10 @@ const Home =({}) => {
                     Nos événements, tels que les tentes rouges, célèbrent la force et la sagesse féminine dans un cadre bienveillant et chaleureux. 
                     Laissez-vous guider sur ce chemin d’épanouissement personnel et collectif, et vivez une expérience profondément nourrissante.</p>
                     
-                <ContainerButtonImage src="Voir les évènement passé" img="./event_passe.webp" lien={`/evenement/${DateFilterType.PAST}`} />
-                <ContainerButtonImage src="Voir les évènement future" img="./event_futur.webp" lien={`/evenement/${DateFilterType.FUTURE}` }/>
+                <a href={`/evenement/${DateFilterType.PAST}`}><ContainerImageAnimation src="./event_passe.webp" title="Voir les évènement passé" alt="Image"/></a>
+                <a href={`/evenement/${DateFilterType.PAST}`}><ContainerImageAnimation src="./event_futur.webp" title="Voir les évènement future" alt="Image"/></a>
             </div>
+            <Footer />
         </>
     )
 
