@@ -2,7 +2,6 @@
 import NavBarre from "../component/NavBarre"
 import { DateFilterType } from "../GetData"
 import "../assets/style/styleIndex.css"
-import ContainerButtonImage from "../component/ContainerButonImage"
 import ContainerImageAnimation from "../component/ContainerImageAnime"
 import Footer from "../component/Footer"
 

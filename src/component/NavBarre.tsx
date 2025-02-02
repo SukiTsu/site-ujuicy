@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import '../assets/style/styleNavBarre.css'
-import { DateFilterType } from "../GetData"
 
 interface Props{
   strTitre:string
