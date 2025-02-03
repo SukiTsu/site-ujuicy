@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../assets/style/styleNavBarre.css'
+import { DateFilterType } from '../GetData';
 
 interface Props{
   strTitre:string
@@ -16,8 +17,8 @@ const NavBarre:React.FC<Props> = ({strTitre}) => {
           </div>
           <ul className={isOpen ? "nav-links open" : "nav-links"}>
             <li><a href="/">Accueil</a></li>
-            <li><a href={`/evenement/passe`}>Événements passés</a></li>
-            <li><a href={`/evenement/futur`}>Événements à venir</a></li>
+            <li><a href={`/evenement/${DateFilterType.PAST}`}>Événements passés</a></li>
+            <li><a href={`/evenement/${DateFilterType.FUTURE}`}>Événements à venir</a></li>
             <li><a href="/a-propos">À propos de moi</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>

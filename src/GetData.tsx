@@ -9,6 +9,7 @@ export class ManagerEvent {
     listEvent: Evenement[] = [];
     listEventPass: Evenement[] = [];
     listEventFuture: Evenement[] = [];
+    isFetch: boolean = false;
 
 
     /**
@@ -26,6 +27,11 @@ export class ManagerEvent {
 
 
     async fetchData() : Promise<string> {
+        if (this.isFetch){
+            return "Données déja récupéré"
+        }
+        this.isFetch = true;
+        console.log("fetch data")
 
         let trapError = "";
         try {
@@ -44,7 +50,7 @@ export class ManagerEvent {
                 const datatmp = await response.json();
                 const data = datatmp.data;
                 //const error = data.debugInfo
-                //console.log(data);
+                console.log(data);
                 const dateActuel = new Date;
 
                 for (let i = 0; i < data.length; i++) {
@@ -61,7 +67,7 @@ export class ManagerEvent {
 
                     const tmpDuree = data[i].duree;
                     const tmpPrix = data[i].prix;
-                    const tmpLocalisation = data[i].tmpLocalisation;
+                    const tmpLocalisation = data[i].localisation;
                     
                     
                     const event = new Evenement(tmpTitre, tmpImage, tmpContenu, tmpDate, tmpDuree, tmpPrix, tmpLocalisation)

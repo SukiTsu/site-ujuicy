@@ -30,8 +30,9 @@ const ContainerEvenement:React.FC<Props> =({evenement}) => {
               <h2>{selectedEvent.titre}</h2>
               <iframe src={`https://drive.google.com/file/d/${evenement.imagId}/preview`}></iframe>
               {/*<img src={selectedEvent.imgSrc} alt={selectedEvent.titre} />*/}
-              {/*<p><strong>Date :</strong> {selectedEvent.date.toDateString()}</p>*/}
+              {<p><strong>Date :</strong> {selectedEvent.dateToString()}</p>}
               <p>{selectedEvent.contenu}</p>
+              <p><strong>Localisation :</strong> {selectedEvent.localisation}</p>
               <p><strong>Durée :</strong> {selectedEvent.duree}</p>
               <p><strong>Prix :</strong> {selectedEvent.prix} €</p>
             </div>
