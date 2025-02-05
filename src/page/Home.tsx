@@ -1,25 +1,58 @@
 
 import NavBarre from "../component/NavBarre"
-import { DateFilterType } from "../GetData"
 import "../assets/style/styleIndex.css"
-import ContainerImageAnimation from "../component/ContainerImageAnime"
+import "../assets/style/styleHome.css"
 import Footer from "../component/Footer"
+import AnimatedOnScroll from "../component/AnimatedScroll"
+import Card from "../component/Card"
 
 const Home =({}) => {
+    const dataUser = [
+        { 
+            prenom: 'Brandon', 
+            imgs: "./suki.jpg",
+            content: "J'ai pas trop d'idée pour me présenter mais jsuis chaud pour faire n'importe quelle choré",
+            time: 0.1
+        },
+        { 
+            prenom: 'Arthur', 
+            imgs: "./arthur.jpg",
+            content: "Incroyable magestieux iconique leader en or et MJ ",
+            time: 0.2
+        },
+    ]
 
     return(
         <>
             <NavBarre strTitre="Accueil" />
-            <div className="content">
-                <h1>Bienvenue dans notre espace dédié au bien-être et à la reconnexion à soi.</h1>
-                <p>Prenez une pause dans le tourbillon de la vie quotidienne et découvrez un refuge de sérénité où méditation, écoute et partage sont au cœur de nos valeurs. 
-                    Nous vous invitons à explorer des pratiques douces pour harmoniser votre esprit et votre corps, tout en créant des liens authentiques avec vous-même et les autres.
-                    Nos événements, tels que les tentes rouges, célèbrent la force et la sagesse féminine dans un cadre bienveillant et chaleureux. 
-                    Laissez-vous guider sur ce chemin d’épanouissement personnel et collectif, et vivez une expérience profondément nourrissante.</p>
-                    
-                <a href={`/evenement/${DateFilterType.PAST}`}><ContainerImageAnimation src="./event_passe.webp" title="Voir les évènement passé" alt="Image"/></a>
-                <a href={`/evenement/${DateFilterType.PAST}`}><ContainerImageAnimation src="./event_futur.webp" title="Voir les évènement future" alt="Image"/></a>
+            <div className="container">
+                <div className="content-home">
+                <h3 className="subtitle">Ujuicy</h3>
+                <h1 className="title">Un petit groupe passionné</h1>
+                <p className="description">
+                    Nous, c’est Ujuicy, une équipe soudée par la passion de la K-pop ! On n’est peut-être pas des pros, mais on donne tout pour des prestations carrées, fun et pleines d’énergie.
+                    Ensemble, on danse, on progresse et surtout, on s’éclate !
+                    On se retrouve très vite pour de nouvelles performances !
+                </p>
+                <a href="/a-propos" className="cta-link">Nous contacter</a>
+                </div>
+                {/*<img src="./home_img_groupe.jpg" alt="K-Pop Dance Crew" className="animated-image" id="animated-image" />*/}
+                {/*<AnimatedImageTop src="./home_img_groupe.jpg" classNameDiv="image-container" type={TypeOfAnimation.TOP} overlay="" repeat={false}/>*/}
+                <div className="image-container">
+                <AnimatedOnScroll children={<img src="./home_img_groupe.jpg"/>} time={0.1} repeat={false}/>
+                </div>
+                
+
             </div>
+            <div className="section">
+                <h2 className="section-title">Notre Équipe</h2>
+                <div className="card-container">
+                    {dataUser.map((user) => (
+                        <AnimatedOnScroll children={<Card src={user.imgs} titre={user.prenom} content={user.content}/>} time={user.time} repeat={false}/>
+                    ))}
+                </div>
+            </div>
+
             <Footer />
         </>
     )

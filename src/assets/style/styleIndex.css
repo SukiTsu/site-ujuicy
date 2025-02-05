@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap");
 
 body {
-  font-family: "Poppins", sans-serif; /* Police moderne et épurée */
-  font-size: 18px; /* Taille confortable pour la lecture */
-  line-height: 1.8; /* Espacement agréable entre les lignes */
-  color: #3a3a3a; /* Couleur douce pour un bon contraste */
-  background-color: #f6f5f0; /* Fond légèrement beige pour une sensation naturelle */
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #000; /* Noir pour correspondre au thème du logo */
+  color: #fff;
+  line-height: 1.6;
   margin: 0;
 }
+
 
 /* 🌿 Titres principaux */
 h1, h2, h3 {
