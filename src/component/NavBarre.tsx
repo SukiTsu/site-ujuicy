@@ -16,11 +16,9 @@ const NavBarre:React.FC<Props> = ({strTitre}) => {
           </div>
           <ul className={isOpen ? "nav-links open" : "nav-links"}>
             <li><a href="/">Accueil</a></li>
-            <li><a href="/prestation/passe">Nos prestation passé</a></li>
-            <li><a href="/prestation/futur">Nos prestation à venir</a></li>
-            <li><a href="/a-propos">À propos de nous</a></li>
+            <li><a href="/prestation-passe">Nos prestation passé</a></li>
+            <li><a href="/prestation-futur">Nos prestation à venir</a></li>
             <li><a href="/amf">AMF</a></li>
-            <li><a href="/contact">Contact</a></li>
           </ul>
         </nav>
         <h1>Bienvenue à vous</h1>

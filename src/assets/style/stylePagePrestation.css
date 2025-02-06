@@ -1,0 +1,60 @@
+.past-events-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.past-events-container h2 {
+  font-size: 2.5em;
+  color: #3B2F2F; /* Couleur naturelle et apaisante */
+  margin-bottom: 20px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.event-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid #3B2F2F;
+}
+
+.event-info {
+  padding: 15px;
+}
+
+.event-info h3 {
+  color: #222;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.event-date {
+  font-style: italic;
+  color: #888;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.event-description {
+  font-size: 1em;
+  color: #444;
+  line-height: 1.5;
+}

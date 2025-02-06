@@ -6,30 +6,28 @@ const Footer =({}) => {
         <footer className="footer">
             <div className="footer-container">
                 <div className="footer-section">
-                    <h3>Me suivre</h3>
+                    <h3>Nous suivre</h3>
                     <ul className="social-list">
-                        <li><a href="/">LinkedIn</a></li>
-                        <li><a href="/">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/ujuicy.real?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></li>
                     </ul>
                 </div>
 
                 <div className="footer-section">
-                    <h3>Mes pages</h3>
+                    <h3>Nos pages</h3>
                     <ul className="page-list">
                         <li><a href="/" className="link-navbar">Accueil</a></li>
-                        <li><a href={`/evenement/${DateFilterType.PAST}`}>Evènement passé</a></li>
-                        <li><a href={`/evenement/${DateFilterType.FUTURE}`}>Evènement à venir</a></li>
-                        <li><a href="/a-propos" className="link-navbar">A propos</a></li>
-                        <li><a href="/contact" className="link-navbar">Contact</a></li>
+                        <li><a href="/amf" className="link-navbar">AMF</a></li>
+                        <li><a href="/evenement-passe" className="link-navbar">Evènement passé</a></li>
+                        <li><a href="/evenement-futur" className="link-navbar">Evènement à venir</a></li>
                     </ul>
                 </div>
 
                 <div className="footer-section">
-                    <h3>Me contacter</h3>
+                    <h3>Nous contacter</h3>
                     <ul className="contact-list">
-                        <li><strong>Me trouver :</strong>???</li>
-                        <li><strong>Mon numéro de téléphone :</strong>06 32 04 09 17</li>
-                        <li><strong>Mon mail :</strong>???</li>
+                        <li><strong>Nous trouver :</strong>BNF</li>
+                        <li><strong>Notre numéro :</strong>???</li>
+                        <li><strong>Notre mail :</strong>???</li>
                     </ul>
                 </div>
             </div>

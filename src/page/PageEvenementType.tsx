@@ -1,64 +1,42 @@
-import React, { useEffect, useState } from "react"
-import { Evenement } from "../ClassEvement"
-import managerEvent, { DateFilterType } from "../GetData"
-import ContainerEvenement from "../component/ContainerEvenement"
-import NavBarre from "../component/NavBarre"
-import Loader from "../component/ContainerLoader"
+import "../assets/style/stylePagePrestation.css"
+import "../assets/style/styleIndex.css"
+import NavBarre from "../component/NavBarre";
 
-interface Props{
-    getEvenement:string
-}
+const PageEvents = ({}) => {
 
-const PageEvenementType:React.FC<Props> =({ getEvenement }) => {
+    const pastEvents = [
+        {
+          id: 1,
+          title: "Notre première prestation, à la Paris Manga !",
+          date: "12 Juillet 2023",
+          description: "En collaboration avec l'AMF Cosplay, nous avons eu l'opportunité d'avoir une petite scène",
+          video: "./public/video_bk.mp4",
+          poster: "./public/suki.jpg"
+        },
+      ];
 
-    let listEvenement: Evenement[] = []
-    listEvenement = managerEvent.getEvenementPasse(getEvenement)
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [allEvent, setAllEvent] = useState<JSX.Element[]>([]);
-
-    async function generHmlt(){
-        let tmpHtmlEvenet : JSX.Element[] = [];
-        if (listEvenement.length == 0){
-            if (!isLoading){
-                tmpHtmlEvenet.push(<Loader />,<Loader />,<Loader />)
-            }else{
-            tmpHtmlEvenet.push(<p>Aucun évènement sont passée</p>);
-            }
-        }else{
-            listEvenement.map(event =>{
-                tmpHtmlEvenet.push(<ContainerEvenement key={event.titre} evenement={event}/>)
-            })
-        }
-        return tmpHtmlEvenet
-    }
-
-    useEffect(() => {
-        if (!isLoading){
-            console.log("Les données ne sont pas chargées, tentative de fetch...");
-            fetchData();
-            setIsLoading(true)
-        }
-      }, []); // Exécution une seule fois au montage
-
-      const fetchData = async () => {
-        await managerEvent.fetchData();
-        setAllEvent(await generHmlt())
-        setIsLoading(false); // Une fois les données chargées
-      };
-
-    return(
-        <>  
-            <NavBarre strTitre={`Les évènements ${getEvenement == DateFilterType.PAST ? "passés" : "futures"}`}/>
-            <div className="content">
-                <h1>Voici nos {getEvenement == DateFilterType.PAST ? "évènements passés" : "prochains évènements"}</h1>
-                <div className="events-grid">
-                    {isLoading ? [<Loader />,<Loader />,<Loader />] : ""}
-                    {allEvent}
-                </div>
+  return (
+    <>
+    <NavBarre strTitre="Nos prestations passé"/>
+    <div className="past-events-container">
+      <h2>Nos Prestations Passées</h2>
+      <div className="events-grid">
+        {pastEvents.map(event => (
+            <div className="event-card">
+                <video autoPlay muted loop>
+                    <source src="./public/video_bk.mp4" type="video/mp4" className="event-video"></source>
+                </video>
+            <div className="event-info">
+              <h3>{event.title}</h3>
+              <p className="event-date">{event.date}</p>
+              <p className="event-description">{event.description}</p>
             </div>
-        </>
-    )
+          </div>
+        ))}
+      </div>
+    </div>
+    </>
+  );
+};
 
-}
-
-export default PageEvenementType
+export default PageEvents;

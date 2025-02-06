@@ -1,0 +1,20 @@
+/* Styles pour la page des spectacles */
+.next-shows-container {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #2C3E50;
+    color: #ECF0F1;
+  }
+  
+  .next-shows-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .shows-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }

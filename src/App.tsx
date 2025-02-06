@@ -6,6 +6,9 @@ import NotFound from './page/NotFound'
 import "./assets/style/styleIndex.css"
 import About from './page/About'
 import Contact from './page/Contact'
+import PageEvents from './page/PageEvenementType'
+import Amf from './page/Amf'
+import PageProchainEvent from './page/PageProchainEvent'
 
 
 function App() {
@@ -37,8 +40,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/a-propos" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path={`/evenement/${DateFilterType.PAST}`} element={<PageEvenementType getEvenement={DateFilterType.PAST} />}/>
-        <Route path={`/evenement/${DateFilterType.FUTURE}`} element={<PageEvenementType getEvenement={DateFilterType.FUTURE} />}/>
+        <Route path="/prestation-passe" element={<PageEvents />} />
+        <Route path="/prestation-futur" element={<PageProchainEvent />} />
+        <Route path="/amf" element={<Amf />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
