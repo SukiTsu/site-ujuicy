@@ -1,5 +1,4 @@
 import '../assets/style/styleFooter.css'
-import { DateFilterType } from '../GetData'
 
 const Footer =({}) => {
     return(
