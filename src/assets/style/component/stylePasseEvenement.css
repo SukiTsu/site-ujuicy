@@ -27,9 +27,9 @@
     transform: scale(1.05);
   }
   
-  .event-card img {
+  .event-card .event-video {
     width: 100%;
-    height: 150px;
+    height: auto;
     object-fit: cover;
     border-radius: 8px;
   }
