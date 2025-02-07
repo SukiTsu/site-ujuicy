@@ -24,7 +24,19 @@ const Amf =({}) => {
                     </p>
                     <a href="https://www.instagram.com/a.m.f.cosplay?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="cta-link">Voir la page Instagram</a>
                 </div>
-
+            </div>
+            <div className="container gray">
+                <div className="content-home">
+                    <h3 className="subtitle">AMF Cosplay & Ujuicy</h3>
+                    <h1 className="title">Une collaboration</h1>
+                    <p className="description">
+                        Nous sommes en collaboration avec l'AMF Cosplay, avec laquelle nous avons l'opportunité de produire des prestations sur scène. 
+                        Un grand merci au président d'avoir accepter notre collaboration !!
+                    </p>
+                </div>
+                <div className="image-container">
+                    <AnimatedOnScroll children={<img src="./amf_collab.jpg"/>} time={0.1} repeat={false}/>
+                </div>
             </div>
 
             <Footer />

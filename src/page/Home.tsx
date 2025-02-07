@@ -34,10 +34,8 @@ const Home =({}) => {
                     Ensemble, on danse, on progresse et surtout, on s’éclate !
                     On se retrouve très vite pour de nouvelles performances !
                 </p>
-                <a href="/a-propos" className="cta-link">Nous contacter</a>
+                <a href="https://www.instagram.com/ujuicy.real?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="cta-link">Notre page intagram</a>
                 </div>
-                {/*<img src="./home_img_groupe.jpg" alt="K-Pop Dance Crew" className="animated-image" id="animated-image" />*/}
-                {/*<AnimatedImageTop src="./home_img_groupe.jpg" classNameDiv="image-container" type={TypeOfAnimation.TOP} overlay="" repeat={false}/>*/}
                 <div className="image-container">
                 <AnimatedOnScroll children={<img src="./home_img_groupe.jpg"/>} time={0.1} repeat={false}/>
                 </div>

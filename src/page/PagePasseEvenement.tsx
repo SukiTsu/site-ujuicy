@@ -2,8 +2,9 @@ import "../assets/style/stylePagePrestation.css"
 import "../assets/style/component/stylePasseEvenement.css"
 import "../assets/style/styleIndex.css"
 import NavBarre from "../component/NavBarre";
+import Footer from "../component/Footer";
 
-const PageEvents = ({}) => {
+const PagePastEvents = ({}) => {
 
     const pastEvents = [
         {
@@ -36,8 +37,9 @@ const PageEvents = ({}) => {
         ))}
       </div>
     </div>
+    <Footer />
     </>
   );
 };
 
-export default PageEvents;
+export default PagePastEvents;
