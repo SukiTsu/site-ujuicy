@@ -11,8 +11,7 @@ const PagePastEvents = ({}) => {
           title: "Notre première prestation, à la Paris Manga !",
           date: "12 Juillet 2023",
           description: "En collaboration avec l'AMF Cosplay, nous avons eu l'opportunité d'avoir une petite scène",
-          video: "./public/video_bk.mp4",
-          poster: "./public/suki.jpg"
+          video: "/video_bk.mp4"
         },
       ];
 

@@ -10,13 +10,13 @@ const Home =({}) => {
     const dataUser = [
         { 
             prenom: 'Brandon', 
-            imgs: "./suki.jpg",
+            imgs: "/suki.jpg",
             content: "J'ai pas trop d'idée pour me présenter mais jsuis chaud pour faire n'importe quelle choré",
             time: 0.1
         },
         { 
             prenom: 'Arthur', 
-            imgs: "./arthur.jpg",
+            imgs: "/arthur.jpg",
             content: "Incroyable magestieux iconique leader en or et MJ ",
             time: 0.2
         },

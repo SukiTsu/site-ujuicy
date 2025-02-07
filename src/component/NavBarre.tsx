@@ -24,7 +24,7 @@ const NavBarre:React.FC<Props> = ({strTitre}) => {
         <h1>Bienvenue à vous</h1>
         <p>{strTitre}</p>
         <video autoPlay muted loop id="myVideo" width={"100%"}  height={"100%"}>
-        <source src="./public/video_bk.mp4" type="video/mp4"></source></video>
+        <source src="/video_bk.mp4" type="video/mp4"></source></video>
         <div className="content-video">
           <h1>Ujuicy</h1>
           <p>La naissance d'un groupe passionné</p>
