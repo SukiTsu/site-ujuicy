@@ -1,38 +1,99 @@
+.show-card {
+  width: 300px;
+  background: #34495E;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(50px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Image */
+.show-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Informations */
+.show-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.show-info h3 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #00ff88;
+}
+
+.show-date,
+.show-location {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.show-description {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
   .show-card {
-    width: 300px;
-    background: #34495E;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(50px);
-    transition: transform 0.6s ease, opacity 0.6s ease;
+    width: 260px;
   }
-  
-  
-  .show-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .show-info {
-    padding: 15px;
-  }
-  
+
   .show-info h3 {
-    margin: 0;
-    font-size: 1.5em;
-    color: #00ff88;
+    font-size: 1.3em;
   }
-  
+
   .show-date,
   .show-location {
-    font-size: 1em;
-    margin: 5px 0;
+    font-size: 0.95em;
   }
-  
+
   .show-description {
-    font-size: 0.9em;
-    opacity: 0.8;
+    font-size: 0.85em;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .show-card {
+    width: 100%; /* La carte prend toute la largeur */
+    max-width: 400px;
+  }
+
+  .show-info h3 {
+    font-size: 1.2em;
+  }
+
+  .show-date,
+  .show-location {
+    font-size: 0.9em;
+  }
+
+  .show-description {
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 480px) {
+  .show-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .show-info h3 {
+    font-size: 1.1em;
+  }
+
+  .show-date,
+  .show-location {
+    font-size: 0.85em;
+  }
+
+  .show-description {
+    font-size: 0.8em;
+  }
+}

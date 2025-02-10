@@ -1,48 +1,92 @@
-  /* Conteneur des cartes */
-  .card-container {
-    display: flex;
-    flex-wrap: wrap; /* Permet de revenir à la ligne si l'espace est insuffisant */
-    justify-content: center; /* Centre les cartes horizontalement */
-    gap: 40px; /* Espacement entre les cartes */
-    padding: 20px;
-  }
-  
-  /* Style pour chaque carte */
+/* Conteneur des cartes */ 
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permet de revenir à la ligne si l'espace est insuffisant */
+  justify-content: center; /* Centre les cartes horizontalement */
+  gap: 40px; /* Espacement entre les cartes */
+  padding: 20px;
+}
+
+/* Style pour chaque carte */
+.card {
+  width: 300px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 4px 6px #00ff88;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image de la carte */
+.card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Contenu de la carte */
+.card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
   .card {
-    width: 300px;
-    border-radius: 15px;
-    background: #fff;
-    box-shadow: 0 4px 6px  #00ff88;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px;
   }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Image de la carte */
-  .card-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  /* Contenu de la carte */
-  .card-content {
-    padding: 20px;
-    text-align: center;
-  }
-  
+
   .card-content h3 {
-    font-size: 1.5rem;
-    margin: 0 0 10px;
-    color: #333;
+    font-size: 1.3rem;
   }
-  
+
   .card-content p {
-    font-size: 1rem;
-    color: #666;
+    font-size: 0.9rem;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%; /* Prend toute la largeur pour s'adapter aux petits écrans */
+    max-width: 400px;
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-content p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .card-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .card-content p {
+    font-size: 0.8rem;
+  }
+}
